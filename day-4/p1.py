@@ -1,3 +1,5 @@
+# https://adventofcode.com/2021/day/4
+
 from typing import List
 
 def update_tables(tables: List[List[List[int]]], num):

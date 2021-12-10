@@ -1,3 +1,5 @@
+# https://adventofcode.com/2021/day/2
+
 if __name__ == "__main__":
     lines = []
     with open('input') as f:

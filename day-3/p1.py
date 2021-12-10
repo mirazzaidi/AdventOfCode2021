@@ -1,3 +1,6 @@
+# https://adventofcode.com/2021/day/3
+
+
 def util(data):
     return max(set(data), key = data.count)
 
