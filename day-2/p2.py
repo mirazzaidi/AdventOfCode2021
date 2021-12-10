@@ -1,4 +1,6 @@
 
+from utils.utils import get_lines_from_file
+
 def fun(lines):
     hp = 0
     dp = 0
@@ -25,10 +27,8 @@ def fun(lines):
 
 
 if __name__ == "__main__":
-    lines = []
-    with open('input') as f:
-        lines = f.readlines()
-        lines = [line.rstrip() for line in lines]
+    lines = get_lines_from_file('day-2/input')
+
     # lines = [
     #     'forward 5',
     #     'down 5', 
@@ -40,6 +40,7 @@ if __name__ == "__main__":
     #     ]
     ans = fun(lines)
     print(ans)
+    assert ans == 1408487760
 
 
 

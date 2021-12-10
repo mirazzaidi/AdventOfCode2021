@@ -1,11 +1,10 @@
+from utils.utils import get_lines_from_file
 
 if __name__ == "__main__":
-    lines = []
-    with open('input') as f:
-        lines = f.readlines()
-        lines = [int(line.rstrip()) for line in lines]
+    lines = get_lines_from_file('day-1/input')
+    lines = [int(x) for x in lines]
 
-    count = 0;
+    count = 0
     prev_window_sum = sum(lines[0:3])
     prev = int(lines[0])
     for i in range(3, len(lines)):

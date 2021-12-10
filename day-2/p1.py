@@ -1,10 +1,8 @@
 # https://adventofcode.com/2021/day/2
+from utils.utils import get_lines_from_file
 
 if __name__ == "__main__":
-    lines = []
-    with open('input') as f:
-        lines = f.readlines()
-        lines = [line.rstrip() for line in lines]
+    lines = get_lines_from_file('day-2/input')
 
     hp = 0
     dp = 0
@@ -17,8 +15,9 @@ if __name__ == "__main__":
             dp += value
         elif direction == 'forward':
             hp += value
-    
-    print(hp*dp)
+    ans = hp*dp
+    print(ans)
+    assert ans == 1690020
 
 
         
