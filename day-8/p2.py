@@ -19,11 +19,7 @@ def check(s1, s2):
 if __name__ == "__main__":
     lines = get_lines_from_file('day-8/input')
 
-    lines_left = [line.split('|')[0].rstrip() for line in lines]
-    lines_right = [line.split('|')[1].lstrip() for line in lines]
     sum = 0
-
-    # // process 1,4,7,8
     for line in lines:
 
         left, right = line.split('|')
