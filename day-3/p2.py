@@ -1,5 +1,5 @@
 def get_most_common(data, prefer_zero=True):
-    
+
     zeros = 0
     ones = 0
     for d in data:
@@ -7,11 +7,12 @@ def get_most_common(data, prefer_zero=True):
             zeros += 1
         else:
             ones += 1
-    
+
     if prefer_zero:
         return '0' if zeros >= ones else '1'
     else:
         return '0' if zeros > ones else '1'
+
 
 def get_least_common(data, prefer_zero=True):
     zeros = 0
@@ -21,14 +22,14 @@ def get_least_common(data, prefer_zero=True):
             zeros += 1
         else:
             ones += 1
-    
+
     if prefer_zero:
         return '0' if zeros <= ones else '1'
     else:
         return '0' if zeros < ones else '1'
 
+
 def fun(data):
-    
 
     code_len = len(data[0])
     CO2_rating = ''
@@ -50,12 +51,10 @@ def fun(data):
         CO2_rating = [d for d in CO2_rating if d[i] == v]
         i += 1
 
-    
-   
     O2_rating = int(O2_rating[0], 2)
     CO2_rating = int(CO2_rating[0], 2)
 
-    return O2_rating*CO2_rating
+    return O2_rating * CO2_rating
 
 
 if __name__ == "__main__":

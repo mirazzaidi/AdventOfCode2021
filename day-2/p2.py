@@ -1,5 +1,5 @@
-
 from utils.utils import get_lines_from_file
+
 
 def fun(lines):
     hp = 0
@@ -18,12 +18,8 @@ def fun(lines):
             hp += value
             # It increases your depth by your aim multiplied by X.
             dp += aim * value
-    
-    return hp*dp
 
-
-
-
+    return hp * dp
 
 
 if __name__ == "__main__":
@@ -31,7 +27,7 @@ if __name__ == "__main__":
 
     # lines = [
     #     'forward 5',
-    #     'down 5', 
+    #     'down 5',
     #     'forward 8',
     #     'up 3',
     #     'down 8',
@@ -41,7 +37,3 @@ if __name__ == "__main__":
     ans = fun(lines)
     print(ans)
     assert ans == 1408487760
-
-
-
-        

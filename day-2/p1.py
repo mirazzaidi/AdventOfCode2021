@@ -15,9 +15,6 @@ if __name__ == "__main__":
             dp += value
         elif direction == 'forward':
             hp += value
-    ans = hp*dp
+    ans = hp * dp
     print(ans)
     assert ans == 1690020
-
-
-        

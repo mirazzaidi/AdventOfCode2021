@@ -5,5 +5,4 @@ if __name__ == "__main__":
 
     # strip the part before |
     lines = [line.split('|')[1].lstrip() for line in lines]
-    print("Total words: ", len(
-        [word for line in lines for word in line.split() if len(word) in [2, 3, 4, 7]]))
+    print("Total words: ", len([word for line in lines for word in line.split() if len(word) in [2, 3, 4, 7]]))

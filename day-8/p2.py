@@ -45,8 +45,7 @@ if __name__ == "__main__":
                 wires[word] = 8
 
         # remove 1,4,7,8
-        words_on_left = [w for w in words_on_left if len(w) not in [
-            2, 3, 4, 7]]
+        words_on_left = [w for w in words_on_left if len(w) not in [2, 3, 4, 7]]
 
         for word in words_on_left:
             word = sorted_str(word)

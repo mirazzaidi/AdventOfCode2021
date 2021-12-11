@@ -1,21 +1,23 @@
 from typing import List, Set
 
+
 def update_tables(tables: List[List[List[int]]], num):
     for table in tables:
         for row in range(len(table)):
             for col in range(len(table[0])):
                 # print(table[row][col])
                 if table[row][col] == num:
-                    table[row][col] = -1*num
+                    table[row][col] = -1 * num
+
 
 def check_table(table: List[List[int]]):
-    #check rows
+    # check rows
     for row in table:
-        if all(col<=0 for col in row):
+        if all(col <= 0 for col in row):
             return True
 
     for col in list(zip(*table)):
-        if all(c<=0 for c in col):
+        if all(c <= 0 for c in col):
             return True
     return False
 
@@ -36,12 +38,12 @@ if __name__ == "__main__":
         table.append(row)
         if len(table) == 5:
             tables.append(table)
-            table=[]
+            table = []
     winner_index = -1
     winners: Set[int] = set()
     for num in markings:
         # print(num)
-        
+
         update_tables(tables, num)
         for table_index, table in enumerate(tables):
             if check_table(table):
@@ -51,15 +53,13 @@ if __name__ == "__main__":
                     break
         if len(winners) == len(tables):
             break
-    
-    sum=0
+
+    sum = 0
     if winner_index >= 0:
         wt = tables[winner_index]
         for i in range(5):
             for j in range(5):
-                if(wt[i][j]>=0):
+                if wt[i][j] >= 0:
                     sum += wt[i][j]
 
-    print(num*sum)
-
-    
+    print(num * sum)

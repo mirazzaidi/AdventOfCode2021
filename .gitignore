@@ -1,3 +1,4 @@
 *.out
 *.pyc
-.vscode/launch.json
+.vscode/*
+venv

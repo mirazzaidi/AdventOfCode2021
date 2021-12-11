@@ -2,11 +2,10 @@
 
 
 def util(data):
-    return max(set(data), key = data.count)
+    return max(set(data), key=data.count)
 
 
 def fun(data):
-    
 
     code_len = len(data[0])
 
@@ -14,19 +13,14 @@ def fun(data):
     epsilon_rate = ''
     for i in range(code_len):
         gamma_rate += util([d[i] for d in data])
-    
+
     for i in range(code_len):
         epsilon_rate += '0' if util([d[i] for d in data]) == '1' else '1'
-    
+
     gamma_rate = int(gamma_rate, 2)
     epsilon_rate = int(epsilon_rate, 2)
 
-    return gamma_rate*epsilon_rate
-
-    
-    
-
-
+    return gamma_rate * epsilon_rate
 
 
 if __name__ == "__main__":
