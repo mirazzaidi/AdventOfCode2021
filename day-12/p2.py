@@ -3,14 +3,17 @@ from typing import List, Dict
 from dataclasses import dataclass
 from utils.utils import get_lines_from_file
 
+
 @dataclass
 class Cave:
     name: str
     connections: List[Cave]
 
+
 all_paths = []
 
-def dfs(node: Cave, path: str, one_small_cave_visited_twice = False):
+
+def dfs(node: Cave, path: str, one_small_cave_visited_twice=False):
 
     path += node.name
 
@@ -19,7 +22,7 @@ def dfs(node: Cave, path: str, one_small_cave_visited_twice = False):
         # print (path)
         return
     path += ','
-    
+
     for connected_cave in node.connections:
         if connected_cave.name == 'start':
             continue
@@ -55,20 +58,19 @@ if __name__ == "__main__":
         if not cave_b:
             cave_b = Cave(b, [])
 
-
         cave_list[a] = cave_a
         cave_list[b] = cave_b
 
         cave_a.connections.append(cave_b)
         cave_b.connections.append(cave_a)
-        
+
         if not start:
             if cave_a.name == 'start':
                 start = cave_a
             elif cave_b.name == 'start':
                 start = cave_b
-    
+
     paths = ''
     dfs(start, paths)
 
-    print("Answer is ",len(all_paths))
+    print("Answer is ", len(all_paths))
